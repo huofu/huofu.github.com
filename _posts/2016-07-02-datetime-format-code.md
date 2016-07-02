@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cheat Sheet: Date(Time) Format Code for Python
+title: Cheat Sheet - Date(Time) Format Code for Python
 category : 写代码
 tagline: "Supporting tagline"
 tags : [工具, Cheat Sheet, Python]
