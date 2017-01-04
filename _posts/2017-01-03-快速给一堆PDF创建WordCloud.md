@@ -9,13 +9,13 @@ tags : [教程, Python]
 
 **故事是这样的，年底的某一天，老板让我在某组织的月会里分享一下之前某个月参加某学术会议的经历。在准备的过程中，突发奇想，要是能基于会议的所有paper搞一个WordCloud，不就能很清楚地告诉大家这个会里的小伙伴都是在搞啥！**
 
-时间紧任务重，说做就做！
+虽然时间紧任务重，说做就做！
 
 首先，想起来流程很简单，先从所有pdf抽取word，再统计词频，最后用一个能根据权重生成WordCloud的库就搞定收工了！
 
 摆一张最后效果图先！
 
-![Word Cloud of Academic Papers](http://i.imgur.com/lvJgFkU.png)
+<img src="http://i.imgur.com/lvJgFkU.png" width="100%">
 
 **无奖竞猜，这是什么会！**
 
@@ -53,7 +53,7 @@ def convert_pdf(path):
     retstr.close()
     return str
  
-pdflist = glob.glob("C:\PATH_TO_PDFS\*.pdf")
+pdflist = glob.glob("C:\\PATH_TO_PDFS\\*.pdf")
  
 for pdf in pdflist:
     print("Working on: " + pdf + '\n')
@@ -62,7 +62,7 @@ for pdf in pdflist:
     fout.close()
 ```
 
-这个过程中，很大机会你报错： 
+这个过程中，很大机会会报错： 
 
 	pdfminer ImportError: cannot import name process_pdf
 
@@ -73,7 +73,7 @@ for pdf in pdflist:
 
 ### 第二步：统计词频
 
-下一步就是把挖出来的Word进行词频统计，并导出合适的格式，继续参考轮子！
+下一步就是把挖出来的Word进行词频统计，并导出为合适的格式，继续参考轮子！
 
 > Word Frequency from PDFs <br/>
 > [http://pinkyslemma.com/2013/07/02/word-frequency-from-pdfs/](http://pinkyslemma.com/2013/07/02/word-frequency-from-pdfs/ "Word Frequency from PDFs")
@@ -96,7 +96,7 @@ for k, v in cnt.items():
     fout.write(v + "\t" + str(k) + '\n')
 fout.close()
 ```
-参照第三步我们会用到的工具，我们把导出的格式设置为（出现次数:词）。
+参照第三步我们会用到的工具，我们把导出的格式设置为：出现次数TAB词。
 
 ### 第三步：生成WordCloud
 
@@ -107,6 +107,6 @@ fout.close()
 
 类似的工具有很多，当然技术党也可以自己搭一个自己的版本，但是还是那句话，时间紧，任务重！
 
-再上一张效果图 :)
+再上一张效果图，猜出来是什么会了么 :)
 
-![Word Cloud of Academic Papers](http://i.imgur.com/lvJgFkU.png)
+<img src="http://i.imgur.com/lvJgFkU.png" width="100%">
