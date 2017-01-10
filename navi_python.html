@@ -6,11 +6,9 @@ group: navigation
 tag: Python
 ---
 {% include JB/setup %}
-
-<h2>{{ page.title }}</h2>
 {% for tag in site.tags %} 
   <ul>
-	{% if tag[1] == page.tag %}
+	{% if tag[0] == page.tag %}
 		{% assign pages_list = tag[1] %}  
 		{% include JB/pages_list %}
 	{% endif %}
